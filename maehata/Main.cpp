@@ -10,7 +10,9 @@ int main(void)
 
     double target = 200.0;
     double output = 100.0;
-    double controllValue = Pid..controll(target, output);
+    double task = 0.004;
+
+    double controllValue = Pid.controll(target, output);
 
     printf("%lf\n", controllValue);
     return 0;

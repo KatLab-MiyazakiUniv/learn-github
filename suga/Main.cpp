@@ -11,7 +11,7 @@ int main(void)
     Pid pid(Kp, Ki, Kd, integral, pre_error);
     double target = 200.0; //目標値
     double output = 100; //現在地
-    double period = 4; //周期
+    double period = 0.004; //周期
 
     double controllvalue = pid.p_controll(target, output) + pid.i_controll(target, output, period) + pid.d_controll(target, output, period);
     

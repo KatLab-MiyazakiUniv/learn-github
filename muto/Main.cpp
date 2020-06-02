@@ -11,8 +11,8 @@ int main(void){
 	double output = 100.0;
 	double task = 0.004;
 
-	double integralValue = pid.integral(target, output, task);
-	double defferentialValue = pid.defferential(target, output, task);
+	double integralValue = pid.Integral(target, output, task);
+	double defferentialValue = pid.Differential(target, output, task);
 	double controllValue = pid.controll(target, output) + integralValue + defferentialValue;
 
 	printf("%lf\n", controllValue);

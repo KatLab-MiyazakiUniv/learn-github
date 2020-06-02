@@ -15,8 +15,10 @@ double Pid::Integral(double target, double output, double task){
 }
 
 double Pid::Defferential(double target, double output, double task){
-	(error(target, output) - gain.pre_error) / task;
-	return (error(target, output) - gain.pre_error) / task;
+	double temp = (error(target, output) - gain.pre_error) / task;
+	gain.pre_error = temp;
+	return temp;
+}
 
 double Pid::controll(double target, double output){
 	return gain.Kp * error(target, output);

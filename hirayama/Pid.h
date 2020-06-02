@@ -7,6 +7,10 @@ class Pid
     private:
         //メンバ変数
         PidGain gain;
+
+        // double errorSum = 0.0; // 誤差の累積値 
+        // double beforeError=0.0; // 前回の誤差
+
     public:
         //コンストラクタ
         Pid(double Kp_, double Ki_, double Kd_);

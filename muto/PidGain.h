@@ -6,7 +6,7 @@ class PidGain{
 		double Kp;
 		double Ki;
 		double Kd;
-		double integral;
+		double integral_temp;
 		double pre_error;
 		PidGain(double Kp_, double Ki_, double Kd_);
 		void setPidGain(double Kp_, double Ki_, double Kd_);

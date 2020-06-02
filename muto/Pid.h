@@ -10,8 +10,8 @@ class Pid{
 	public:
 		Pid(double Kp_, double Ki_, double Kd_);
 		double error(double target, double output);
-		double Integral(double target, double output, double task);
-		double Differential(double target, double output, double task);
+		double integral(double target, double output, double period);
+		double differential(double target, double output, double period);
 		double controll(double target, double output);
 };
 

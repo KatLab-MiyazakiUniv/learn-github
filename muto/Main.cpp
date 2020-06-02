@@ -9,10 +9,10 @@ int main(void){
 
 	double target = 200.0;
 	double output = 100.0;
-	double task = 0.004;
+	double period = 0.004;
 
-	double integralValue = pid.Integral(target, output, task);
-	double defferentialValue = pid.Differential(target, output, task);
+	double integralValue = pid.integral(target, output, period);
+	double defferentialValue = pid.differential(target, output, period);
 	double controllValue = pid.controll(target, output) + integralValue + defferentialValue;
 
 	printf("%lf\n", controllValue);

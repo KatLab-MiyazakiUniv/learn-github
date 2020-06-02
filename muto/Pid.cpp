@@ -9,13 +9,13 @@ double Pid::error(double target, double output){
 	return target - output;
 }
 
-double Pid::Integral(double target, double output, double task){
-	gain.integral += error(target, output) * task;
-	return gain.Ki * gain.integral;
+double Pid::integral(double target, double output, double period){
+	gain.integral_temp += error(target, output) * period;
+	return gain.Ki * gain.integral_temp;
 }
 
-double Pid::Defferential(double target, double output, double task){
-	double temp = (error(target, output) - gain.pre_error) / task;
+double Pid::differential(double target, double output, double period){
+	double temp = (error(target, output) - gain.pre_error) / period;
 	gain.pre_error = temp;
 	return temp;
 }
